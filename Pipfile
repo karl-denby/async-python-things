@@ -10,6 +10,7 @@ pylint = "*"
 bocadillo = "*"
 asyncio = "*"
 websockets = "*"
+chatterbot = "*"
 
 [requires]
 python_version = "3.6"
