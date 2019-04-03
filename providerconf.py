@@ -1,6 +1,7 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from bocadillo import provider
+from contextlib import contextmanager
 
 @provider(scope="app")
 def diego():
@@ -13,3 +14,19 @@ def diego():
     )
 
     return diego
+
+@provider(scope="app")
+def clients():
+    return set()
+
+@provider
+def save_client(clients):
+    @contextmanager
+    def _register(ws):
+        clients.add(ws)
+        try:
+            yield ws
+        finally:
+            clients.remove(ws)
+
+    return _register
