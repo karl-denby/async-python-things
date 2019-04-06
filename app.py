@@ -1,6 +1,11 @@
-from bocadillo import App
+from bocadillo import App, Templates
 
-app = App()
+app = App(static_dir='frontend', static_config={"max_age": 30})
+templates = Templates(app, directory='frontend/html')
+
+@app.route("/")
+async def root(req, res):
+    res.html = await templates.render('index.html')
 
 @app.websocket_route("/conversation")
 async def converse(ws, diego, save_client):
