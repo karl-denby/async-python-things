@@ -1,6 +1,11 @@
+# IDEs
 .vscode
 .idea
-__pycache__
 
+# Cachefiles
+__pycache__
+.pytest_cache
+
+# working data storage
 db.sqlite*
 sentence_tokenizer.pickle
