@@ -12,7 +12,6 @@ bocadillo = "*"
 asyncio = "*"
 websockets = "*"
 chatterbot = "*"
-chatterbot-corpus = "*"
 
 [requires]
 python_version = "3.6"
