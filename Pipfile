@@ -11,7 +11,7 @@ pytest = "*"
 bocadillo = "*"
 asyncio = "*"
 websockets = "*"
-chatterbot = "*"
+chatterbot_corpus = "*"
 
 [requires]
 python_version = "3.6"
