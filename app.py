@@ -1,7 +1,11 @@
-from bocadillo import App, Templates
+from bocadillo import App, Templates, static
 
-app = App(static_dir='frontend', static_config={"max_age": 30})
-templates = Templates(app, directory='frontend/html')
+app = App(static_dir='dist', static_config={"max_age": 30})
+app.mount(prefix='js', app=static('dist/js'))
+app.mount(prefix='css', app=static('dist/css'))
+app.mount(prefix='img', app=static('dist/img'))
+
+templates = Templates(app, directory='dist')
 
 @app.route("/")
 async def root(req, res):
