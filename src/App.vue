@@ -2,16 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <Count msg="Number of clients is: "/>
+    <Chat botname="Diego" />
   </div>
 </template>
 
 <script>
 import Count from './components/Count.vue'
+import Chat from './components/Chat.vue'
 
 export default {
   name: 'app',
   components: {
-    Count
+    Count,
+    Chat
   }
 }
 </script>

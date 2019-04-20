@@ -23,4 +23,4 @@ async def client_count(req, res, clients):
     res.media = {"count": len(clients)}
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=8000)

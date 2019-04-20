@@ -1,10 +1,11 @@
 <template>
   <div class="count">
-    <h1 v-on:click="fetchCount()">{{ msg }}{{ count }}</h1>
+    <h1 v-on:click="fetchcount()">{{ msg }}{{ count }}</h1>
   </div>
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
   name: 'Count',
   data () {
@@ -13,25 +14,21 @@ export default {
     }
   },
   mounted () {
-    this.fetchCount()
+    this.fetchcount()
   },
   props: {
     msg: String
   },
   methods: {
-    fetchCount() {
-      this.axios
-        .get('/client-count')
+    fetchcount: _.debounce(function () {
+      this.$http.get('/client-count')
         .then(response => this.count = response.data.count)
-        .catch(error => {
-          console.log(error)
-          this.errored = true
-        })
-    }
+        .catch(err => this.count = 'N/A')
+    })
   }
 }
 </script>
-
+  
 <style scoped>
 h1 {
   margin: 40px 0 0;
