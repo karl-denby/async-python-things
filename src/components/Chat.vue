@@ -2,7 +2,7 @@
   <div class="chat">
   
     <ul class="list-group">
-      <li class="list-group" v-for="line in chatlines" >{{ line.author }}: {{ line.text }}</li>
+      <li v-bind:class="{  'list-group': 1, 'bot-chat': line.bot, 'user-chat': !line.bot}" v-for="line in chatlines">{{ line.author }}: {{ line.text }}</li>
     </ul>
     <input v-model="username" placeholder="Jane Doe">
     <input v-model="message" placeholder="Say something">
@@ -21,11 +21,13 @@ export default {
       chatlines: [
         { 
           author: this.botname,
-          text: "Hello"
+          text: "Hello",
+          bot: true
         },
         {
           author: this.botname,
-          text: "How are you?"
+          text: "How are you?",
+          bot: true
         }
       ],
       username: '',
@@ -127,5 +129,11 @@ button {
 
     border-radius: 0;
 
+}
+.bot-chat {
+  text-align: left
+}
+.user-chat {
+  text-align: right
 }
 </style>
