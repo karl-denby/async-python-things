@@ -1,30 +1,10 @@
 # async-python-things
 
-## Backend / python bocadillo
+## Stop
+This project **was** a playground for working with async python / bocadillo, with a vue js frontend and websockets.  Also it was a chance to try out pipenv.
 
-1. Ensure you have pipenv installed, through your package manager or via `pip install pipenv`
-1. Create virtual environment and install dependencies with `pipenv install`
-1. Also run `pipenv run pip install chatterbot` *
+- async / bocadillo = nice, but breaking changes between 0.13 and 0.14
+- vuejs, enjoy working on this but mixing backend and frontend in one project like this is a bit messy
+- pipenv, nice idea, but poor execution, hopefully it improves.
 
-* pipenv when it installs chatterbot-corpus doesn't pull in chatterbot as it would have a conflicting version of pyyaml, this is hacky but it works until chatterbot-corpus upgrades to a newer pyyaml
-
-## Usage
-
-1. Get a shell in the virtual environment with `pipenv shell`
-1. Run the server with `pipenv run python app.py`
-1. Run the client with `pipenv run python client.py`
-
-## Frontend / Vuejs
-
-Project setup `npm install`
-Compiles and hot-reloads for development `npm run serve`
-Compiles and minifies for production `npm run build`
-Run your tests `npm run test`
-Lints and fixes files `npm run lint`
-
-## TODO list in no particular order
-
-* Create a frontend in Vue.js
-* Train Diego to understand more things
-* Add more endpoints to the API
-* Create a working docker image
+This projet is abandoned.
