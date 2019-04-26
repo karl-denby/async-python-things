@@ -8,10 +8,10 @@ pylint = "*"
 pytest = "*"
 
 [packages]
-bocadillo = "*"
 asyncio = "*"
 websockets = "*"
 chatterbot_corpus = "*"
+bocadillo = "==0.13.3"
 
 [requires]
 python_version = "3.6"
